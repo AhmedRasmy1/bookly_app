@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/home/presentation/views/widgets/list_view_item.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/books_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -8,26 +8,8 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        SizedBox(
-          height: 240,
-          child: BooksListView(),
-        ),
+        BooksListView(),
       ],
-    );
-  }
-}
-
-class BooksListView extends StatelessWidget {
-  const BooksListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 20,
-      itemBuilder: (context, index) {
-        return const CustomListViewItem();
-      },
-      scrollDirection: Axis.horizontal,
     );
   }
 }
