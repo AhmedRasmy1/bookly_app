@@ -8,8 +8,26 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        CustomListViewItem(),
+        SizedBox(
+          height: 240,
+          child: BooksListView(),
+        ),
       ],
+    );
+  }
+}
+
+class BooksListView extends StatelessWidget {
+  const BooksListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: 20,
+      itemBuilder: (context, index) {
+        return const CustomListViewItem();
+      },
+      scrollDirection: Axis.horizontal,
     );
   }
 }
