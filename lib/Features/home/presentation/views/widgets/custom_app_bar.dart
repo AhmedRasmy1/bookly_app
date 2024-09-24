@@ -15,7 +15,7 @@ class AppBarIcon extends StatelessWidget {
         onPressed: () {},
         icon: const Icon(
           FontAwesomeIcons.magnifyingGlass,
-          size: 30,
+          size: 24,
         ),
       ),
     );
