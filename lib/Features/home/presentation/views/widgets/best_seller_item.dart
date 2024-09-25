@@ -1,6 +1,5 @@
 import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({super.key});
@@ -8,14 +7,14 @@ class BestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(18.0),
+      padding: const EdgeInsets.only(top: 23, left: 30, right: 30, bottom: 10),
       child: SizedBox(
         height: 130,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: 71,
+              width: 75,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 color: Colors.white,
@@ -27,7 +26,7 @@ class BestSellerItem extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              width: 40,
+              width: 30,
             ),
             const Expanded(
               child: Column(
