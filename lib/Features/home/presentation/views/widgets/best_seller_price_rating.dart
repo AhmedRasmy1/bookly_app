@@ -26,7 +26,7 @@ class PriceAndRatingItem extends StatelessWidget {
           size: 14,
         ),
         SizedBox(
-          width: 5,
+          width: 6.3,
         ),
         Text(
           "4.8",
@@ -34,6 +34,9 @@ class PriceAndRatingItem extends StatelessWidget {
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
+        ),
+        SizedBox(
+          width: 6,
         ),
         Text(" (1000)",
             style: TextStyle(

@@ -6,7 +6,7 @@ class CustomListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 25, left: 20),
+      padding: const EdgeInsets.only(top: 25, left: 11),
       child: Container(
         width: 165,
         decoration: BoxDecoration(

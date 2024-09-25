@@ -11,6 +11,7 @@ class BestSellerListView extends StatelessWidget {
           itemCount: 20,
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
             return const BestSellerItem();
           }),
