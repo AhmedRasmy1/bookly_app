@@ -33,6 +33,7 @@ dependencies:
     sdk: flutter
   font_awesome_flutter: ^10.7.0
   get: ^4.6.6
+  go_router: ^14.2.8
   google_fonts: ^6.2.1
 
 dev_dependencies:
@@ -65,7 +66,5 @@ flutter:
     - family: GT Sectra Fine
       fonts:
         - asset: assets/fonts/GT Sectra Fine Regular.ttf
-    
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

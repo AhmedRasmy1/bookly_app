@@ -5,3 +5,6 @@ const String logo = "assets/images/Logo.png";
 const kTranstionDuration = Duration(milliseconds: 250);
 
 const kGTSectraFine = 'GT Sectra Fine';
+
+const kSplachRouteBath = '/';
+const kHomeRouteBath = '/homeview';
