@@ -18,7 +18,7 @@ class BooksDetailsView extends StatelessWidget {
           },
           icon: const Icon(
             FontAwesomeIcons.xmark,
-            size: 25,
+            size: 30,
           ),
         ),
         actions: const [
@@ -26,7 +26,7 @@ class BooksDetailsView extends StatelessWidget {
             padding: EdgeInsets.only(right: 34),
             child: Icon(
               Icons.shopping_cart_outlined,
-              size: 25,
+              size: 30,
             ),
           )
         ],
