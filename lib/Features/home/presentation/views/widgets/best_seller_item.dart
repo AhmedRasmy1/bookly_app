@@ -1,4 +1,6 @@
+import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({super.key});
@@ -13,11 +15,11 @@ class BestSellerItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: 90,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(14),
+              width: 71,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
                 color: Colors.white,
-                image: const DecorationImage(
+                image: DecorationImage(
                   image: AssetImage('assets/images/test_image.jpg'),
                   fit: BoxFit.fill,
                   filterQuality: FilterQuality.high,
@@ -34,9 +36,9 @@ class BestSellerItem extends StatelessWidget {
                   Text(
                     "Harry Potter and the Goblet of Fire",
                     style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: kGTSectraFine),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -56,9 +58,9 @@ class BestSellerItem extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "19.99 £",
+                        "19.99 €",
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
                         maxLines: 2,

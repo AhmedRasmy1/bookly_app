@@ -8,9 +8,9 @@ class CustomListViewItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 25, left: 18),
       child: Container(
-        width: 150,
+        width: 165,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: BorderRadius.circular(6),
             color: Colors.white,
             image: const DecorationImage(
               image: AssetImage('assets/images/test_image.jpg'),
