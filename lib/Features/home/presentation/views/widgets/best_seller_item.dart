@@ -16,7 +16,7 @@ class BestSellerItem extends StatelessWidget {
       },
       child: Padding(
         padding:
-            const EdgeInsets.only(top: 23, left: 11, right: 30, bottom: 10),
+            const EdgeInsets.only(top: 23, left: 30, right: 30, bottom: 10),
         child: SizedBox(
           height: context.deviceHeight * 0.16,
           child: const Row(

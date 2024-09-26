@@ -1,5 +1,7 @@
+import 'package:bookly_app/Features/home/presentation/views/widgets/also_like_list_view.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/books_actions.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/books_details_image.dart';
 import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -8,29 +10,15 @@ class BooksDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Padding(
-        padding: const EdgeInsets.only(top: 20, left: 35, right: 35),
+        padding: EdgeInsets.only(top: 20, left: 35, right: 35),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              width: context.deviceWidth * 0.5,
-              height: context.deviceHeight * 0.3,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                image: const DecorationImage(
-                  image: AssetImage('assets/images/test_image.jpg'),
-                  fit: BoxFit.fill,
-                  filterQuality: FilterQuality.high,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 32,
-            ),
-            const Text(
+            BooksDetailsImage(),
+            SizedBox(height: 32),
+            Text(
               "The Jungle Book",
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
@@ -41,20 +29,22 @@ class BooksDetailsViewBody extends StatelessWidget {
                 fontFamily: kGTSectraFine,
               ),
             ),
-            const SizedBox(
-              height: 13,
-            ),
-            const Text(
-              "Rudyard Kipling",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
+            SizedBox(height: 13),
+            Opacity(
+              opacity: .7,
+              child: Text(
+                "Rudyard Kipling",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  fontStyle: FontStyle.italic,
+                ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 20,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
@@ -62,9 +52,7 @@ class BooksDetailsViewBody extends StatelessWidget {
                   color: Colors.yellow,
                   size: 13,
                 ),
-                SizedBox(
-                  width: 3,
-                ),
+                SizedBox(width: 3),
                 Text(
                   "4.8",
                   style: TextStyle(
@@ -72,9 +60,7 @@ class BooksDetailsViewBody extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
-                  width: 3,
-                ),
+                SizedBox(width: 3),
                 Text(
                   "(1000)",
                   style: TextStyle(
@@ -84,67 +70,31 @@ class BooksDetailsViewBody extends StatelessWidget {
                 )
               ],
             ),
-            const SizedBox(
-              height: 41,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 170,
-                  height: 48,
-                  decoration: const BoxDecoration(
+            SizedBox(height: 41),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  BooksAction(
+                    borderRadius:
+                        BorderRadius.horizontal(left: Radius.circular(15)),
+                    backgroundColor: Colors.white,
+                    color: Colors.black,
+                    txtActionButton: "19.99 €",
+                  ),
+                  BooksAction(
+                    borderRadius:
+                        BorderRadius.horizontal(right: Radius.circular(15)),
+                    backgroundColor: Color(0xffEF8262),
                     color: Colors.white,
-                    borderRadius: BorderRadius.horizontal(
-                      left: Radius.circular(10),
-                    ),
+                    txtActionButton: "Free Preview",
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 53,
-                      vertical: 10,
-                    ),
-                    child: Text(
-                      "19.99 €",
-                      style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    width: 170,
-                    height: 48,
-                    decoration: const BoxDecoration(
-                      color: Color(0xffef8262),
-                      borderRadius: BorderRadius.horizontal(
-                        right: Radius.circular(10),
-                      ),
-                    ),
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 25,
-                        vertical: 10,
-                      ),
-                      child: Text(
-                        "Free Preview",
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                )
-              ],
+                ],
+              ),
             ),
-            const SizedBox(
-              height: 50,
-            ),
-            const Align(
+            SizedBox(height: 50),
+            Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 "You can also like",
@@ -156,55 +106,11 @@ class BooksDetailsViewBody extends StatelessWidget {
                 textAlign: TextAlign.start,
               ),
             ),
-            const SizedBox(
-              height: 14,
-            ),
-            const AlsoLikeListView(),
+            SizedBox(height: 14),
+            AlsoLikeListView(),
           ],
         ),
       ),
-    );
-  }
-}
-
-class AlsoLikeItem extends StatelessWidget {
-  const AlsoLikeItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        margin: const EdgeInsets.only(right: 10),
-        height: 124,
-        width: 78,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          image: const DecorationImage(
-            image: AssetImage('assets/images/test_image.jpg'),
-            fit: BoxFit.fill,
-            filterQuality: FilterQuality.high,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class AlsoLikeListView extends StatelessWidget {
-  const AlsoLikeListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-          itemCount: 15,
-          scrollDirection: Axis.horizontal,
-          shrinkWrap: true,
-          itemBuilder: (context, index) {
-            return const AlsoLikeItem();
-          }),
     );
   }
 }
