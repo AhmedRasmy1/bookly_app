@@ -9,3 +9,4 @@ const kGTSectraFine = 'GT Sectra Fine';
 const kSplachRouteBath = '/';
 const kHomeRouteBath = '/homeview';
 const kBookDetailsRouteBath = '/details';
+const kSerachBooksRouteBath = '/search';
