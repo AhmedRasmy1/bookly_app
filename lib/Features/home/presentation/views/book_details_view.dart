@@ -1,7 +1,6 @@
 import 'package:bookly_app/Features/home/presentation/views/widgets/books_details_view_body.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/custom_app_bar_details_page.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:go_router/go_router.dart';
 
 class BooksDetailsView extends StatelessWidget {
   const BooksDetailsView({super.key});
@@ -12,24 +11,8 @@ class BooksDetailsView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
-        title: IconButton(
-          onPressed: () {
-            GoRouter.of(context).pop();
-          },
-          icon: const Icon(
-            FontAwesomeIcons.xmark,
-            size: 30,
-          ),
-        ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 34),
-            child: Icon(
-              Icons.shopping_cart_outlined,
-              size: 30,
-            ),
-          )
-        ],
+        title: const AppBarCloseIcon(),
+        actions: const [AppBarShoppingIcon()],
       ),
       body: const BooksDetailsViewBody(),
     );
