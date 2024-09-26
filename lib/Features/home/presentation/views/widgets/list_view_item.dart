@@ -7,7 +7,7 @@ class CustomListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         GoRouter.of(context).push(kBookDetailsRouteBath);
       },

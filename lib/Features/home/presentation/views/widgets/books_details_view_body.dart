@@ -111,26 +111,29 @@ class BooksDetailsViewBody extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  width: 170,
-                  height: 48,
-                  decoration: const BoxDecoration(
-                    color: Color(0xffef8262),
-                    borderRadius: BorderRadius.horizontal(
-                      right: Radius.circular(10),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    width: 170,
+                    height: 48,
+                    decoration: const BoxDecoration(
+                      color: Color(0xffef8262),
+                      borderRadius: BorderRadius.horizontal(
+                        right: Radius.circular(10),
+                      ),
                     ),
-                  ),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 25,
-                      vertical: 10,
-                    ),
-                    child: Text(
-                      "Free Preview",
-                      style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 25,
+                        vertical: 10,
+                      ),
+                      child: Text(
+                        "Free Preview",
+                        style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 )
@@ -151,9 +154,55 @@ class BooksDetailsViewBody extends StatelessWidget {
                 textAlign: TextAlign.start,
               ),
             ),
+            const SizedBox(
+              height: 14,
+            ),
+            const AlsoLikeListView(),
           ],
         ),
       ),
+    );
+  }
+}
+
+class AlsoLikeItem extends StatelessWidget {
+  const AlsoLikeItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        margin: const EdgeInsets.only(right: 10),
+        height: 124,
+        width: 78,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          image: const DecorationImage(
+            image: AssetImage('assets/images/test_image.jpg'),
+            fit: BoxFit.fill,
+            filterQuality: FilterQuality.high,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class AlsoLikeListView extends StatelessWidget {
+  const AlsoLikeListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.builder(
+          itemCount: 15,
+          scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
+          itemBuilder: (context, index) {
+            return const AlsoLikeItem();
+          }),
     );
   }
 }
