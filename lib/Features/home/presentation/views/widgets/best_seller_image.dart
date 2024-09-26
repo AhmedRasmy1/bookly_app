@@ -1,3 +1,4 @@
+import 'package:bookly_app/extension.dart';
 import 'package:flutter/material.dart';
 
 class ImageOfBestSellerItem extends StatelessWidget {
@@ -8,7 +9,7 @@ class ImageOfBestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 75,
+      width: context.deviceWidth * 0.2,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
         color: Colors.white,

@@ -1,4 +1,5 @@
 import 'package:bookly_app/Features/home/presentation/views/widgets/list_view_item.dart';
+import 'package:bookly_app/extension.dart';
 import 'package:flutter/material.dart';
 
 class BooksListView extends StatelessWidget {
@@ -7,7 +8,7 @@ class BooksListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 240,
+      height: context.deviceHeight * 0.30, //! responsive height
       child: ListView.builder(
         itemCount: 20,
         itemBuilder: (context, index) {
