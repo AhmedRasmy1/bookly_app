@@ -14,12 +14,15 @@ class BooksListView extends StatelessWidget {
     return BlocBuilder<FeturedBooksCubit, FeturedBooksState>(
       builder: (context, state) {
         if (state is FeturedBooksSuccess) {
+          final data = state.books;
           return SizedBox(
             height: context.deviceHeight * 0.30, //! responsive height
             child: ListView.builder(
-              itemCount: 20,
+              itemCount: data.length,
               itemBuilder: (context, index) {
-                return const CustomListViewItem();
+                return CustomListViewItem(
+                  imageUrl: data[index].volumeInfo.imageLinks.thumbnail,
+                );
               },
               scrollDirection: Axis.horizontal,
             ),

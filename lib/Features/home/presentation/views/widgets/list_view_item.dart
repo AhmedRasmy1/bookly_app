@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({super.key});
+  const CustomListViewItem({
+    super.key,
+    required this.imageUrl,
+  });
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +21,18 @@ class CustomListViewItem extends StatelessWidget {
         child: Container(
           width: context.deviceWidth * 0.4,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(6),
-              color: Colors.white,
-              image: const DecorationImage(
-                image: AssetImage('assets/images/test_image.jpg'),
-                fit: BoxFit.fill,
-                filterQuality: FilterQuality.high,
-              )),
+            borderRadius: BorderRadius.circular(6),
+            color: Colors.white,
+          ),
+          child: ClipRRect(
+            // استخدم ClipRRect لضمان أن الصورة تتبع الحدود الدائرية
+            borderRadius: BorderRadius.circular(6),
+            child: FadeInImage.assetNetwork(
+              placeholder: 'assets/images/test_image.jpg',
+              image: imageUrl,
+              fit: BoxFit.fill,
+            ),
+          ),
         ),
       ),
     );
