@@ -11,7 +11,7 @@ class ImageOfBestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: context.deviceWidth * 0.2,
+      width: context.deviceWidth * 0.23,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),

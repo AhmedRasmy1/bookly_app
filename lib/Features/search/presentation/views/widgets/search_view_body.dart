@@ -1,4 +1,3 @@
-import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_details.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_image.dart';
 import 'package:bookly_app/Features/search/presentation/views/widgets/custom_search.dart';
 import 'package:bookly_app/constants.dart';
@@ -50,7 +49,7 @@ class SearchResult extends StatelessWidget {
             SizedBox(
               width: 30,
             ),
-            DetailsOfBestSellerItem(),
+            // DetailsOfBestSellerItem(),
           ],
         ),
       ),

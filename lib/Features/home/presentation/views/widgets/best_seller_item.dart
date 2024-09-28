@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/data/model/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_details.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_image.dart';
 import 'package:bookly_app/constants.dart';
@@ -6,8 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key, required this.imageUrl});
+  const BestSellerItem(
+      {super.key, required this.imageUrl, required this.bookModel});
   final String imageUrl;
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -26,7 +29,9 @@ class BestSellerItem extends StatelessWidget {
               const SizedBox(
                 width: 30,
               ),
-              const DetailsOfBestSellerItem(),
+              DetailsOfBestSellerItem(
+                bookmodel: bookModel,
+              ),
             ],
           ),
         ),
