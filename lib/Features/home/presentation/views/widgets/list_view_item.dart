@@ -1,5 +1,6 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/extension.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -22,15 +23,16 @@ class CustomListViewItem extends StatelessWidget {
           width: context.deviceWidth * 0.4,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6),
-            color: Colors.white,
           ),
           child: ClipRRect(
-            // استخدم ClipRRect لضمان أن الصورة تتبع الحدود الدائرية
             borderRadius: BorderRadius.circular(6),
-            child: FadeInImage.assetNetwork(
-              placeholder: 'assets/images/test_image.jpg',
-              image: imageUrl,
+            child: CachedNetworkImage(
+              imageUrl: imageUrl,
               fit: BoxFit.fill,
+              filterQuality: FilterQuality.high,
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+              placeholder: (context, url) =>
+                  Image.asset('assets/images/animation.gif'),
             ),
           ),
         ),

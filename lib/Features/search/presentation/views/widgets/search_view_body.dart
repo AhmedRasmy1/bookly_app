@@ -44,7 +44,9 @@ class SearchResult extends StatelessWidget {
         child: const Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ImageOfBestSellerItem(),
+            ImageOfBestSellerItem(
+              imageUrl: 'assets/images/test_image.jpg',
+            ),
             SizedBox(
               width: 30,
             ),
