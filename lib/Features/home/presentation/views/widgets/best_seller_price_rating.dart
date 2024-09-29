@@ -42,7 +42,7 @@ class PriceAndRatingItem extends StatelessWidget {
           width: 6,
         ),
         Text(
-          '(${bookModel.volumeInfo!.ratingsCount ?? 0})', // التأكد من أن ratingsCount يتم عرضه بشكل صحيح
+          '(${bookModel.volumeInfo!.ratingsCount ?? 0})',
           style: const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w400,
