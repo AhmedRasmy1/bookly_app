@@ -1,5 +1,3 @@
-import 'package:bookly_app/Core/widget/custom_error_widget.dart';
-import 'package:bookly_app/Core/widget/custom_loading_indicator.dart';
 import 'package:bookly_app/Core/widget/custom_shimmer_bastseller.dart';
 import 'package:bookly_app/Features/home/presentation/manager/newset_books_cubit/newsest_books_cubit.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_item.dart';
