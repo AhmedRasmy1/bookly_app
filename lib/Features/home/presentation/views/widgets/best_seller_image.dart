@@ -1,6 +1,7 @@
-import 'package:bookly_app/extension.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../extension.dart';
 
 class ImageOfBestSellerItem extends StatelessWidget {
   const ImageOfBestSellerItem({

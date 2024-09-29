@@ -1,8 +1,8 @@
-import 'package:bookly_app/Features/home/data/model/book_model/book_model.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_details.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_image.dart';
-import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/extension.dart';
+import '../../../data/model/book_model/book_model.dart';
+import 'best_seller_details.dart';
+import 'best_seller_image.dart';
+import '../../../../../constants.dart';
+import '../../../../../extension.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

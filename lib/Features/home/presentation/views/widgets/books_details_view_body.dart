@@ -1,7 +1,7 @@
-import 'package:bookly_app/Features/home/data/model/book_model/book_model.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/also_like_list_view.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/books_actions.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/books_details_section.dart';
+import '../../../data/model/book_model/book_model.dart';
+import 'also_like_list_view.dart';
+import 'books_actions.dart';
+import 'books_details_section.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 

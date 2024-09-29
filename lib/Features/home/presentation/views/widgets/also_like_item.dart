@@ -1,4 +1,4 @@
-import 'package:bookly_app/extension.dart';
+import '../../../../../extension.dart';
 import 'package:flutter/material.dart';
 
 class AlsoLikeItem extends StatelessWidget {

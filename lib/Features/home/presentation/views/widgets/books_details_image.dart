@@ -1,5 +1,6 @@
-import 'package:bookly_app/extension.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../extension.dart';
 
 class BooksDetailsImage extends StatelessWidget {
   const BooksDetailsImage({

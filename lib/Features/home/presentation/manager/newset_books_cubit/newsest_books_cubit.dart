@@ -1,9 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-
 import 'package:bookly_app/Features/home/data/model/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/data/repository/home_repo.dart';
+import 'package:equatable/equatable.dart';
 
 part 'newsest_books_state.dart';
 

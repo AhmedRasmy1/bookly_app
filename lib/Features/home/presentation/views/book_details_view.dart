@@ -1,7 +1,7 @@
-import 'package:bookly_app/Features/home/data/model/book_model/book_model.dart';
-import 'package:bookly_app/Features/home/presentation/manager/similar_books_cubit/similer_books_cubit.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/books_details_view_body.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/custom_app_bar_details_page.dart';
+import '../../data/model/book_model/book_model.dart';
+import '../manager/similar_books_cubit/similer_books_cubit.dart';
+import 'widgets/books_details_view_body.dart';
+import 'widgets/custom_app_bar_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

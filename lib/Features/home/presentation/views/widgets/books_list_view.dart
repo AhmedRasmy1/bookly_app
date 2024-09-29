@@ -1,9 +1,10 @@
-import 'package:bookly_app/Core/widget/custom_shimmer_featured_book.dart';
-import 'package:bookly_app/Features/home/presentation/manager/fetured_books_cubit/fetured_books_cubit.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/list_view_item.dart';
-import 'package:bookly_app/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../../Core/widget/custom_shimmer_featured_book.dart';
+import '../../../../../extension.dart';
+import '../../manager/fetured_books_cubit/fetured_books_cubit.dart';
+import 'list_view_item.dart';
 
 class BooksListView extends StatelessWidget {
   const BooksListView({super.key});

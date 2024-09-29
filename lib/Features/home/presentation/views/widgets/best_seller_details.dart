@@ -1,6 +1,6 @@
-import 'package:bookly_app/Features/home/data/model/book_model/book_model.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_price_rating.dart';
-import 'package:bookly_app/constants.dart';
+import '../../../data/model/book_model/book_model.dart';
+import 'best_seller_price_rating.dart';
+import '../../../../../constants.dart';
 import 'package:flutter/material.dart';
 
 class DetailsOfBestSellerItem extends StatelessWidget {
