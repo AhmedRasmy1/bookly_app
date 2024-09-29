@@ -40,7 +40,7 @@ class BooksDetailsViewBody extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(child: SizedBox(height: 50)),
+                SizedBox(height: 50),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -54,7 +54,7 @@ class BooksDetailsViewBody extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 14),
-                AlsoLikeListView(),
+                Expanded(child: AlsoLikeListView()),
                 SizedBox(height: 40),
               ],
             ),

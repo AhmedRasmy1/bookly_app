@@ -23,7 +23,7 @@ class ImageOfBestSellerItem extends StatelessWidget {
           filterQuality: FilterQuality.high,
           errorWidget: (context, url, error) => const Icon(Icons.error),
           placeholder: (context, url) =>
-              Image.asset('assets/images/animation.gif'),
+              Image.asset('assets/images/animationn.gif'),
         ),
       ),
     );

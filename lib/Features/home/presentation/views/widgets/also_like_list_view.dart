@@ -9,15 +9,13 @@ class AlsoLikeListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: context.deviceHeight * 0.15,
-      child: Expanded(
-        child: ListView.builder(
-            itemCount: 15,
-            shrinkWrap: true,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return const AlsoLikeItem();
-            }),
-      ),
+      child: ListView.builder(
+          itemCount: 15,
+          shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return const AlsoLikeItem();
+          }),
     );
   }
 }
