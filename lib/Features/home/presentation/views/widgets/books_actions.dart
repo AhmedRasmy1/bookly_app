@@ -2,17 +2,20 @@ import 'package:bookly_app/Features/home/presentation/views/widgets/custom_butto
 import 'package:flutter/material.dart';
 
 class BooksAction extends StatelessWidget {
-  const BooksAction(
-      {super.key,
-      required this.borderRadius,
-      required this.backgroundColor,
-      required this.color,
-      required this.txtActionButton});
+  const BooksAction({
+    super.key,
+    required this.borderRadius,
+    required this.backgroundColor,
+    required this.color,
+    required this.txtActionButton,
+    required this.onPressed,
+  });
 
   final BorderRadiusGeometry borderRadius;
   final Color? backgroundColor;
   final Color? color;
   final String txtActionButton;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -21,6 +24,7 @@ class BooksAction extends StatelessWidget {
         borderRadius: borderRadius,
         color: color,
         txtActionButton: txtActionButton,
+        onPressed: onPressed,
       ),
     );
   }

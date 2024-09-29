@@ -3,6 +3,7 @@ import 'package:bookly_app/Features/home/presentation/views/widgets/also_like_li
 import 'package:bookly_app/Features/home/presentation/views/widgets/books_actions.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/books_details_section.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BooksDetailsViewBody extends StatelessWidget {
   const BooksDetailsViewBody({super.key, required this.bookModel});
@@ -23,29 +24,39 @@ class BooksDetailsViewBody extends StatelessWidget {
                 ),
                 const SizedBox(height: 41),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       BooksAction(
-                        borderRadius:
-                            BorderRadius.horizontal(left: Radius.circular(15)),
+                        onPressed: () {},
+                        borderRadius: const BorderRadius.horizontal(
+                            left: Radius.circular(15)),
                         backgroundColor: Colors.white,
                         color: Colors.black,
-                        txtActionButton: "19.99 €",
+                        txtActionButton: "Free",
                       ),
                       BooksAction(
-                        borderRadius:
-                            BorderRadius.horizontal(right: Radius.circular(15)),
-                        backgroundColor: Color(0xffEF8262),
+                        borderRadius: const BorderRadius.horizontal(
+                            right: Radius.circular(15)),
+                        backgroundColor: const Color(0xffEF8262),
                         color: Colors.white,
-                        txtActionButton: "Free Preview",
+                        txtActionButton: "Preview",
+                        onPressed: () async {
+                          final Uri url =
+                              Uri.parse(bookModel.volumeInfo!.previewLink!);
+                          if (await canLaunchUrl(url)) {
+                            await launchUrl(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 50),
-                Align(
+                const SizedBox(height: 50),
+                const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "You can also like",
@@ -57,9 +68,9 @@ class BooksDetailsViewBody extends StatelessWidget {
                     textAlign: TextAlign.start,
                   ),
                 ),
-                SizedBox(height: 14),
-                Expanded(child: AlsoLikeListView()),
-                SizedBox(height: 40),
+                const SizedBox(height: 14),
+                const Expanded(child: AlsoLikeListView()),
+                const SizedBox(height: 40),
               ],
             ),
           ),
