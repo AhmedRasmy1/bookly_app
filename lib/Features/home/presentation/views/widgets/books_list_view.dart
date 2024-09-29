@@ -1,5 +1,6 @@
 import 'package:bookly_app/Core/widget/custom_error_widget.dart';
 import 'package:bookly_app/Core/widget/custom_loading_indicator.dart';
+import 'package:bookly_app/Core/widget/custom_shimmer_featured_book.dart';
 import 'package:bookly_app/Features/home/presentation/manager/fetured_books_cubit/fetured_books_cubit.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/list_view_item.dart';
 import 'package:bookly_app/extension.dart';
@@ -29,10 +30,10 @@ class BooksListView extends StatelessWidget {
           );
         }
         if (state is FeturedBooksFailure) {
-          return CustomErrorWidget(errMessage: state.errMessage);
+          return const CustomShimmer();
         }
 
-        return const CustomLoadingIndicator();
+        return const CustomShimmer();
       },
     );
   }

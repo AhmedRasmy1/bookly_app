@@ -24,7 +24,7 @@ class VolumeInfo extends Equatable {
   final String? previewLink;
   final String? infoLink;
   final String? canonicalVolumeLink;
-  final double? averageRating;
+  final num? averageRating;
   final int? ratingsCount;
 
   const VolumeInfo({
@@ -52,11 +52,7 @@ class VolumeInfo extends Equatable {
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
         title: json['title'] as String?,
-        averageRating: (json['averageRating'] != null)
-            ? (json['averageRating'] is int
-                ? (json['averageRating'] as int).toDouble()
-                : json['averageRating'] as double)
-            : null,
+        averageRating: json['averageRating'],
         ratingsCount: json['ratingsCount'] as int?,
         authors: (json['authors'] as List<dynamic>?)?.cast<String>(),
         publishedDate: json['publishedDate'] as String?,

@@ -1,3 +1,5 @@
+import 'package:bookly_app/Core/widget/custom_shimmer_bastseller.dart';
+import 'package:bookly_app/Core/widget/custom_shimmer_featured_book.dart';
 import 'package:bookly_app/Features/Splash/Presentation/Views/splash_view.dart';
 import 'package:bookly_app/Features/home/presentation/views/book_details_view.dart';
 import 'package:bookly_app/Features/home/presentation/views/home_view.dart';
@@ -32,6 +34,18 @@ abstract class AppRouter {
           return const SearchView();
         },
       ),
+      GoRoute(
+        path: kShimmerPageRouteBath,
+        builder: (context, state) {
+          return const CustomShimmer();
+        },
+      ),
+      GoRoute(
+        path: kShimmerDetailsRouteBath,
+        builder: (context, state) {
+          return const ShimmerPlaceholder();
+        },
+      )
     ],
   );
 }

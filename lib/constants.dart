@@ -10,3 +10,5 @@ const kSplachRouteBath = '/';
 const kHomeRouteBath = '/homeview';
 const kBookDetailsRouteBath = '/details';
 const kSerachBooksRouteBath = '/search';
+const kShimmerPageRouteBath = '/shimmer';
+const kShimmerDetailsRouteBath = '/shimmerdetails';
