@@ -16,7 +16,7 @@ class DetailsOfBestSellerItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            bookmodel.volumeInfo.title.toString(),
+            bookmodel.volumeInfo!.title.toString(),
             style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -28,7 +28,7 @@ class DetailsOfBestSellerItem extends StatelessWidget {
             height: 5,
           ),
           Text(
-            bookmodel.volumeInfo.authors![0],
+            bookmodel.volumeInfo!.authors![0],
             style: const TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w400,

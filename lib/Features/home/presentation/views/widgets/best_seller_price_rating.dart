@@ -32,7 +32,7 @@ class PriceAndRatingItem extends StatelessWidget {
           width: 6.3,
         ),
         Text(
-          (bookModel.volumeInfo.averageRating ?? 0.0).toString(),
+          (bookModel.volumeInfo!.averageRating ?? 0.0).toString(),
           style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -42,7 +42,7 @@ class PriceAndRatingItem extends StatelessWidget {
           width: 6,
         ),
         Text(
-          '(${bookModel.volumeInfo.ratingsCount ?? 0})', // التأكد من أن ratingsCount يتم عرضه بشكل صحيح
+          '(${bookModel.volumeInfo!.ratingsCount ?? 0})', // التأكد من أن ratingsCount يتم عرضه بشكل صحيح
           style: const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w400,

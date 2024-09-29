@@ -19,7 +19,7 @@ class _BooksDetailsViewState extends State<BooksDetailsView> {
   void initState() {
     super.initState();
     BlocProvider.of<SimilerBooksCubit>(context).featchSimilarBooks(
-        category: widget.bookModel.volumeInfo.categories![0]);
+        category: widget.bookModel.volumeInfo!.categories![0]);
   }
 
   @override
@@ -31,7 +31,9 @@ class _BooksDetailsViewState extends State<BooksDetailsView> {
         title: const AppBarCloseIcon(),
         actions: const [AppBarShoppingIcon()],
       ),
-      body: const BooksDetailsViewBody(),
+      body: BooksDetailsViewBody(
+        bookModel: widget.bookModel,
+      ),
     );
   }
 }

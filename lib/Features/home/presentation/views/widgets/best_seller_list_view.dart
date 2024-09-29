@@ -20,7 +20,7 @@ class BestSellerListView extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return BestSellerItem(
-                imageUrl: data[index].volumeInfo.imageLinks.thumbnail,
+                imageUrl: data[index].volumeInfo!.imageLinks!.thumbnail,
                 bookModel: data[index],
               );
             },

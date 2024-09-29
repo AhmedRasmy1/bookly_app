@@ -2,8 +2,8 @@ import 'package:bookly_app/extension.dart';
 import 'package:flutter/material.dart';
 
 class AlsoLikeItem extends StatelessWidget {
-  const AlsoLikeItem({super.key});
-
+  const AlsoLikeItem({super.key, required this.imageUrl});
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -13,10 +13,9 @@ class AlsoLikeItem extends StatelessWidget {
         height: context.deviceHeight * 0.15,
         width: context.deviceWidth * 0.19,
         decoration: BoxDecoration(
-          color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          image: const DecorationImage(
-            image: AssetImage('assets/images/test_image.jpg'),
+          image: DecorationImage(
+            image: NetworkImage(imageUrl),
             fit: BoxFit.fill,
             filterQuality: FilterQuality.high,
           ),

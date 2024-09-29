@@ -20,7 +20,7 @@ class BooksListView extends StatelessWidget {
               itemCount: data.length,
               itemBuilder: (context, index) {
                 return CustomListViewItem(
-                  imageUrl: data[index].volumeInfo.imageLinks.thumbnail,
+                  imageUrl: data[index].volumeInfo!.imageLinks!.thumbnail,
                 );
               },
               scrollDirection: Axis.horizontal,
