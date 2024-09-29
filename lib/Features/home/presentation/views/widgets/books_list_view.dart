@@ -28,10 +28,16 @@ class BooksListView extends StatelessWidget {
           );
         }
         if (state is FeturedBooksFailure) {
-          return const CustomShimmer();
+          return CustomShimmer(
+            height: context.deviceHeight * 0.30,
+            width: context.deviceWidth * 0.5,
+          );
         }
 
-        return const CustomShimmer();
+        return CustomShimmer(
+          height: context.deviceHeight * 0.30,
+          width: context.deviceWidth * 0.5,
+        );
       },
     );
   }
