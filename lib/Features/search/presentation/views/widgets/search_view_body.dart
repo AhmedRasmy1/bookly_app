@@ -1,3 +1,5 @@
+import 'package:bookly_app/Features/search/presentation/views/widgets/default_search_page.dart';
+
 import '../../../../home/presentation/views/widgets/best_seller_image.dart';
 import 'custom_search.dart';
 import '../../../../../constants.dart';
@@ -22,7 +24,7 @@ class SearchViewBody extends StatelessWidget {
             style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: 10),
-          Expanded(child: ResultSearchListView()),
+          DefaultSearchPage(),
         ],
       ),
     );
