@@ -9,54 +9,56 @@ class BooksDetailsSection extends StatelessWidget {
   final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        BooksDetailsImage(),
-        SizedBox(height: 32),
+        BooksDetailsImage(
+          imageUrl: bookModel.volumeInfo!.imageLinks!.thumbnail,
+        ),
+        const SizedBox(height: 32),
         Text(
-          "The Jungle Book",
+          bookModel.volumeInfo!.title.toString(),
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.bold,
             fontFamily: kGTSectraFine,
           ),
         ),
-        SizedBox(height: 13),
+        const SizedBox(height: 13),
         Opacity(
           opacity: .7,
           child: Text(
-            "Rudyard Kipling",
-            style: TextStyle(
+            bookModel.volumeInfo!.authors![0].toString(),
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.italic,
             ),
           ),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
+            const Icon(
               FontAwesomeIcons.solidStar,
               color: Colors.yellow,
               size: 13,
             ),
-            SizedBox(width: 3),
+            const SizedBox(width: 3),
             Text(
-              "4.8",
-              style: TextStyle(
+              (bookModel.volumeInfo!.averageRating ?? 0.0).toString(),
+              style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(width: 3),
+            const SizedBox(width: 3),
             Text(
-              "(1000)",
-              style: TextStyle(
+              '(${bookModel.volumeInfo!.ratingsCount ?? 0})',
+              style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
               ),
