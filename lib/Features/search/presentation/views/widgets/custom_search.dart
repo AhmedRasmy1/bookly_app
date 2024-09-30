@@ -3,11 +3,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomSearchTextField extends StatelessWidget {
-  const CustomSearchTextField({super.key});
+  const CustomSearchTextField({super.key, required this.onSubmitted});
+  final Function(String)? onSubmitted;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onSubmitted: onSubmitted,
       decoration: InputDecoration(
         enabledBorder: buildOutLineInputBuilder(),
         focusedBorder: buildOutLineInputBuilder(),

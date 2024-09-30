@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/data/model/book_model/book_model.dart';
 import 'package:bookly_app/Features/search/presentation/views/widgets/search_book_details.dart';
 import 'package:bookly_app/Features/search/presentation/views/widgets/search_book_image.dart';
 import 'package:bookly_app/constants.dart';
@@ -6,7 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class SearchResult extends StatelessWidget {
-  const SearchResult({super.key});
+  const SearchResult({
+    super.key,
+    required this.bookModel,
+  });
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +21,18 @@ class SearchResult extends StatelessWidget {
       },
       child: SizedBox(
         height: context.deviceHeight * 0.16,
-        child: const Row(
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SearchBookImage(
-              imageUrl: 'assets/images/test_image.jpg',
+              imageUrl: bookModel.volumeInfo!.imageLinks!.thumbnail,
             ),
-            SizedBox(
+            const SizedBox(
               width: 30,
             ),
-            SearchBooksDetails()
+            SearchBooksDetails(
+              bookModel: bookModel,
+            )
           ],
         ),
       ),

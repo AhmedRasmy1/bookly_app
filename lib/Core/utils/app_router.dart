@@ -1,3 +1,6 @@
+import 'package:bookly_app/Features/search/presentation/manager/cubit/serach_books_cubit.dart';
+import 'package:bookly_app/Features/search/repository/search_repo_impl.dart';
+
 import 'service_locator.dart';
 import '../widget/custom_shimmer_bastseller.dart';
 import '../widget/custom_shimmer_featured_book.dart';
@@ -41,7 +44,12 @@ abstract class AppRouter {
       GoRoute(
         path: kSerachBooksRouteBath,
         builder: (context, state) {
-          return const SearchView();
+          return BlocProvider(
+            create: (context) => SerachBooksCubit(
+              getIt.get<SearchRepoImpl>(),
+            ),
+            child: const SearchView(),
+          );
         },
       ),
       GoRoute(

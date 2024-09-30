@@ -6,21 +6,16 @@ import 'package:equatable/equatable.dart';
 part 'serach_books_state.dart';
 
 class SerachBooksCubit extends Cubit<SerachBooksState> {
-  SerachBooksCubit(this.searchRepo) : super(SerachBooksInitial());
+  SerachBooksCubit(this.searchRepo) : super(SearchBooksInitial());
 
   final SearchRepo searchRepo;
 
-  Future<void> featchSearchBooks({required String searchKey}) async {
-    emit(SerachBooksLoading());
+  Future<void> fetchSearchBooks({required String searchKey}) async {
+    emit(SearchBooksLoading());
     var result = await searchRepo.fetchSearchBooks(searchKey: searchKey);
-    result.fold((failure) {
-      emit(
-        SerachBooksFailure(),
-      );
-    }, (books) {
-      emit(
-        SerachBooksSuccess(books),
-      );
-    });
+    result.fold(
+      (failure) => emit(SearchBooksFailure(errMessage: failure.errmessage)),
+      (books) => emit(SearchBooksSuccess(books)),
+    );
   }
 }
