@@ -1,3 +1,4 @@
+import 'package:bookly_app/Core/widget/custom_shimmer_bastseller.dart';
 import 'package:bookly_app/Features/search/presentation/manager/cubit/serach_books_cubit.dart';
 import 'package:bookly_app/Features/search/presentation/views/widgets/search_result.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +14,9 @@ class ResultSearchListView extends StatelessWidget {
     return BlocBuilder<SerachBooksCubit, SerachBooksState>(
       builder: (context, state) {
         if (state is SearchBooksLoading) {
+          return const ShimmerPlaceholder();
         } else if (state is SearchBooksFailure) {
-          return Center(
-            child: Text(state.errMessage),
-          );
+          return const ShimmerPlaceholder();
         } else if (state is SearchBooksSuccess) {
           return ListView.builder(
             itemCount: state.books.length,

@@ -28,12 +28,12 @@ class SearchBooksDetails extends StatelessWidget {
             height: 5,
           ),
           Text(
-            bookModel.volumeInfo!.authors![0],
+            bookModel.volumeInfo?.authors?[0] ?? 'No Author',
             style: const TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w400,
                 color: Colors.white60),
-            maxLines: 2,
+            maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
           const Spacer(),
@@ -68,7 +68,7 @@ class SearchBooksDetails extends StatelessWidget {
                 width: 6,
               ),
               Text(
-                '(${bookModel.volumeInfo!.ratingsCount})',
+                '(${bookModel.volumeInfo!.ratingsCount ?? 0})',
                 style: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w400,

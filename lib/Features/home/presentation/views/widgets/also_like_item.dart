@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '../../../../../extension.dart';
 import 'package:flutter/material.dart';
 
@@ -14,10 +16,17 @@ class AlsoLikeItem extends StatelessWidget {
         width: context.deviceWidth * 0.19,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          image: DecorationImage(
-            image: NetworkImage(imageUrl),
-            fit: BoxFit.fill,
-            filterQuality: FilterQuality.high,
+        ),
+        child: CachedNetworkImage(
+          imageUrl: imageUrl,
+          fit: BoxFit.fill,
+          filterQuality: FilterQuality.high,
+          errorWidget: (context, url, error) => const Icon(Icons.error),
+          placeholder: (context, url) => Center(
+            child: Image.asset(
+              'assets/images/animationn.gif',
+              fit: BoxFit.fill,
+            ),
           ),
         ),
       ),

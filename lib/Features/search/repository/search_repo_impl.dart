@@ -4,7 +4,6 @@ import 'package:bookly_app/Features/home/data/model/book_model/book_model.dart';
 import 'package:bookly_app/Features/search/repository/search_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 
 class SearchRepoImpl implements SearchRepo {
   final ApiService apiService;

@@ -25,7 +25,7 @@ class SearchResult extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SearchBookImage(
-              imageUrl: bookModel.volumeInfo!.imageLinks!.thumbnail,
+              imageUrl: (bookModel.volumeInfo!.imageLinks?.thumbnail) ?? '',
             ),
             const SizedBox(
               width: 30,
