@@ -17,7 +17,7 @@ class SearchResult extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(kBookDetailsRouteBath);
+        GoRouter.of(context).push(kBookDetailsRouteBath, extra: bookModel);
       },
       child: SizedBox(
         height: context.deviceHeight * 0.16,
